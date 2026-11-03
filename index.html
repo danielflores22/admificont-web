@@ -115,6 +115,24 @@ section{padding-block:80px}
 
 /* Beneficios */
 .why{background:var(--soft)}
+
+/* Clientes: carrusel de logos que avanza solo y se puede deslizar */
+.clients{padding-top:8px}
+.logo-rail{position:relative;display:flex;align-items:center;gap:12px}
+.logo-track{flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.logo-track::-webkit-scrollbar{display:none}
+.logo-track:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:14px}
+.logo-list{list-style:none;padding:6px 0;display:flex;gap:16px;width:max-content}
+.logo-card{flex:none;width:216px;height:112px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px 18px;background:#FFFFFF;border:1px solid var(--line);border-radius:14px}
+.logo-card img{display:block;max-width:176px;max-height:64px;width:auto;height:auto;object-fit:contain}
+.logo-cap{font:500 10px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:#526075}
+.logo-card.name span{font:600 17px/1.15 "Montserrat",var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:#0F2A4F;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px}
+.logo-card.name small{font:500 10px/1 var(--f-mono);letter-spacing:.16em;color:#526075}
+.rail-btn{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.rail-btn:hover{border-color:var(--accent);color:var(--accent)}
+.rail-btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (max-width:640px){.rail-btn{display:none}.logo-card{width:176px;height:100px}.logo-card img{max-width:144px;max-height:56px}}
 .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 32px}
 .benefit{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;min-width:0}
 .benefit .ic-wrap{background:var(--surface)}
@@ -232,7 +250,7 @@ footer{padding-block:28px;border-top:1px solid var(--line);color:var(--muted);fo
     <rect x="538" y="475" width="30" height="137" fill="url(#ac-b)"/>
     <path d="M832.1 380.1 A124.5 124.5 0 1 0 832.1 549.9" fill="none" stroke="url(#ac-g)" stroke-width="51"/>
   </symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol><symbol id="i-chev-r" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
   <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c1.9.8 3.1 2.6 3.5 5.2"/></symbol>
   <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
@@ -345,6 +363,39 @@ footer{padding-block:28px;border-top:1px solid var(--line);color:var(--muted);fo
         <div class="stat"><div class="ic-wrap"><svg class="ic"><use href="#i-users"/></svg></div><strong>+15</strong><span>clientes atendidos</span></div>
         <div class="stat"><div class="ic-wrap"><svg class="ic"><use href="#i-grid"/></svg></div><strong>8</strong><span>áreas de servicio</span></div>
         <div class="stat"><div class="ic-wrap"><svg class="ic"><use href="#i-search"/></svg></div><strong>$0</strong><span>diagnóstico inicial</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clientes" class="clients" aria-labelledby="clientes-t">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Clientes</span>
+        <h2 id="clientes-t">Empresas que confían en nosotros</h2>
+      </div>
+      <div class="logo-rail">
+        <button class="rail-btn prev" type="button" aria-label="Ver clientes anteriores"><svg class="ic"><use href="#i-chev-l"/></svg></button>
+        <div class="logo-track" tabindex="0" role="region" aria-label="Logos de clientes de ADMIFICONT">
+          <ul class="logo-list">
+            <li class="logo-card"><img src="clientes/losangeles.webp" alt="Urbanización Los Angeles, Ciudad Satélite" width="313" height="120" loading="lazy" decoding="async"></li>
+            <li class="logo-card"><img src="clientes/onlysoft.webp" alt="OnlySoft, Soluciones Empresariales" width="360" height="90" loading="lazy" decoding="async"></li>
+            <li class="logo-card"><img src="clientes/panorama.webp" alt="Panorama Club, urbanización privada" width="239" height="120" loading="lazy" decoding="async"></li>
+            <li class="logo-card"><img src="clientes/corlan.webp" alt="Corlan Química S.A." width="360" height="82" loading="lazy" decoding="async"></li>
+            <li class="logo-card"><img src="clientes/villaitalia.webp" alt="Villa Italia, etapas Génova y Bari" width="297" height="120" loading="lazy" decoding="async"><span class="logo-cap">Etapas Génova y Bari</span></li>
+            <li class="logo-card name"><span>Paseo del Sol 3<small>Urbanización</small></span></li>
+            <li class="logo-card"><img src="clientes/ochoatex.webp" alt="Ochoatex" width="176" height="120" loading="lazy" decoding="async"></li>
+            <li class="logo-card name"><span>Ruge</span></li>
+            <li class="logo-card name"><span>Imporcompras</span></li>
+            <li class="logo-card"><img src="clientes/ledesma.webp" alt="Baterías Ledesma" width="120" height="120" loading="lazy" decoding="async"></li>
+            <li class="logo-card name"><span>ECIMP<small>Profesionales</small></span></li>
+            <li class="logo-card name"><span>Servequm<small>S.A.S.</small></span></li>
+            <li class="logo-card name"><span>Grupo Daccach</span></li>
+            <li class="logo-card name"><span>Flomar<small>S.A.S.</small></span></li>
+            <li class="logo-card name"><span>Safcont</span></li>
+            <li class="logo-card name"><span>Intergroup<small>S.A.</small></span></li>
+          </ul>
+        </div>
+        <button class="rail-btn next" type="button" aria-label="Ver más clientes"><svg class="ic"><use href="#i-chev-r"/></svg></button>
       </div>
     </div>
   </section>
@@ -489,6 +540,53 @@ document.getElementById('diag-form').addEventListener('submit',function(e){
   document.getElementById('wa-link').href='https://wa.me/593969756270?text='+encodeURIComponent(lines.join('\n'));
   document.getElementById('sent').hidden=false;
 });
+</script>
+<script>
+(function(){
+  var track=document.querySelector('.logo-track'); if(!track) return;
+  var list=track.querySelector('.logo-list');
+  Array.prototype.slice.call(list.children).forEach(function(li){
+    var c=li.cloneNode(true); c.setAttribute('aria-hidden','true');
+    c.querySelectorAll('img').forEach(function(i){i.alt='';}); list.appendChild(c);
+  });
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var pos=0, last=0, hold=0, hover=false, visible=true, speed=30;
+  function half(){return list.scrollWidth/2;}
+  function now(){return performance.now();}
+  function wait(ms){hold=now()+ms;}
+  function tick(t){
+    var dt=last?Math.min(64,t-last):16; last=t;
+    if(reduce||hover||!visible||document.hidden||t<hold){pos=track.scrollLeft;}
+    else{
+      pos+=speed*dt/1000;
+      if(pos>=half()) pos-=half();
+      track.scrollLeft=pos;
+    }
+    requestAnimationFrame(tick);
+  }
+  track.addEventListener('mouseenter',function(){hover=true;});
+  track.addEventListener('mouseleave',function(){hover=false;});
+  track.addEventListener('focusin',function(){hover=true;});
+  track.addEventListener('focusout',function(){hover=false;});
+  ['pointerdown','touchstart','wheel'].forEach(function(ev){track.addEventListener(ev,function(){wait(3000);},{passive:true});});
+  track.addEventListener('scroll',function(){
+    if(t0()) return;
+    var h=half(); if(track.scrollLeft>=h){track.scrollLeft-=h;}
+  },{passive:true});
+  function t0(){return !(reduce||hover||now()<hold);}
+  function step(dir){
+    wait(2500);
+    var card=list.firstElementChild, w=card.getBoundingClientRect().width+16, n=Math.max(1,Math.floor(track.clientWidth/w)-1);
+    var h=half(), x=track.scrollLeft;
+    if(dir<0 && x-w*n<0){x+=h; track.scrollLeft=x;}
+    if(dir>0 && x+w*n>=h*1.5){x-=h; track.scrollLeft=x;}
+    track.scrollTo({left:x+dir*w*n,behavior:reduce?'auto':'smooth'});
+  }
+  document.querySelector('.rail-btn.prev').addEventListener('click',function(){step(-1);});
+  document.querySelector('.rail-btn.next').addEventListener('click',function(){step(1);});
+  if('IntersectionObserver' in window){new IntersectionObserver(function(e){visible=e[0].isIntersecting;}).observe(track);}
+  requestAnimationFrame(tick);
+})();
 </script>
 </body>
 </html>
