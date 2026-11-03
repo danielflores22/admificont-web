@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://admificont.com/sitemap.xml
