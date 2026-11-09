@@ -167,12 +167,12 @@ section{padding-block:80px}
 .mv div{border-left:2px solid var(--accent);padding-left:14px}
 .mv h3{font:600 13px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
 .mv p{font-size:15px}
-.team{display:flex;flex-direction:column;gap:16px}
-.person{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;min-width:0}
-.avatar{width:56px;height:56px;border-radius:50%;background:var(--brand);color:var(--accent-on-brand);display:grid;place-items:center;font:700 20px/1 var(--f-display);flex:none}
-.person h3{font-size:19px}
-.person .role{font-size:14px;color:var(--accent);font-weight:600;margin-top:2px}
-.person p{color:var(--muted);font-size:15px;margin-top:6px}
+.creds-wrap{display:flex;flex-direction:column;gap:16px}
+.creds-title{font:600 13px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cred{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.cred strong{font:700 28px/1 var(--f-display);color:var(--accent)}
+.cred span{color:var(--muted);font-size:15px;line-height:1.5}
 
 /* Diagnóstico */
 .diag{color:var(--brand-ink);background:radial-gradient(ellipse 50% 70% at 85% 20%,rgba(120,185,255,.22),transparent 70%),linear-gradient(135deg,#081831 0%,#0D2A57 55%,#15488F 100%)}
@@ -468,9 +468,14 @@ footer{padding-block:28px;border-top:1px solid var(--line);color:var(--muted);fo
           <div><h3>Visión</h3><p>Ser al 2030 la firma de asesoría de confianza para las pymes de Guayaquil y del Ecuador.</p></div>
         </div>
       </div>
-      <div class="team">
-        <article class="person"><div class="avatar" aria-hidden="true">DF</div><div><h3>Daniel Flores Toala</h3><div class="role">Socio Director</div><p>MBA y Licenciado en Finanzas. Más de 20 años en finanzas y cartera, con experiencia en Cervecería Nacional (AB InBev) y banca.</p></div></article>
-        <article class="person"><div class="avatar" aria-hidden="true">MR</div><div><h3>Ma. Mercedes Romero</h3><div class="role">Consultora contable y tributaria</div><p>Más de 20 años en contabilidad y tributación. Oficial de Cumplimiento calificada y 15 años administrando urbanizaciones.</p></div></article>
+      <div class="creds-wrap">
+        <h3 class="creds-title">Experiencia que respalda a ADMIFICONT</h3>
+        <div class="creds">
+          <div class="cred"><strong>+20 años</strong><span>en finanzas corporativas, cartera y banca, incluida una multinacional de consumo masivo</span></div>
+          <div class="cred"><strong>+20 años</strong><span>en contabilidad y tributación para empresas en Ecuador</span></div>
+          <div class="cred"><strong>UAFE</strong><span>Oficial de Cumplimiento calificado en prevención de lavado de activos</span></div>
+          <div class="cred"><strong>15 años</strong><span>administrando urbanizaciones y asociaciones</span></div>
+        </div>
       </div>
     </div>
   </section>
